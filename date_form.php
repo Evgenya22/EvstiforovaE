@@ -11,6 +11,7 @@
     <b>Ваша ФИО</b>
     <?php
     $fio = $_POST['fio'];
+    echo $fio;
     ?>
 </body>
 </html>
