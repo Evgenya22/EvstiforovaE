@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK 1_данные формы</title>
+    <!--подкл файл со стилями-->
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+
+<body>
+    <header>
+       
+    </header>
+  
+    <main>    
+           
+       <form action="date_form.php" post" id="form">
+         
+        <fieldset>
+            <legend><b> Форма регистрации участника конференции</b></legend>
+    <!--добавим поле ФИО с ФЛК-->
+        <div>
+        <label for="fio">ФИО <span style="color: red;">*</span></label>
+        <input type="text" name="fio" id="fio" placeholder="к примеру, Иванов Иван Иванович" size="30" required pattern="^(([А-ЯЁ]{1}[а-яё]*)([-][А-ЯЁ]{1}[а-яё]*)?\s([А-ЯЁ]{1}[а-яё]*)\s[А-ЯЁ][а-яё]*)$">
+        <p></p>
+        </div>
+    <!--добавим после с др-->
+        <div>
+        <label for="BirthDate">Дата рождения</label>
+        <input type="date" name="BirthDate" id="BirthDate">
+        <p></p>
+        </div>
+    <!--добавим телефон с ФЛК-->
+        <div>
+        <label for="phone">Телефон <span style="color: red;">*</span></label>
+        <input type="tel" name="phone" id="phone" required pattern="^\+7{1}\d{10}$" placeholder="к примеру, +79098087678">
+        <p></p>
+        </div>
+    <!--добавим почту с ФЛК-->
+        <div>
+        <label for="email">Электронная почта <span style="color: red;">*</span></label>
+        <input type="email" name="email" id="email" required pattern="([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)" placeholder="к примеру, example@mail.ru">
+        <p></p>
+        </div>
+    <!--доклад (переключатель)-->
+        <div>
+        <legend>Имеется ли доклад? <span style="color: red;">*</span></legend>
+        <label for="doclad"><input type="radio" name="doclad" id="yes" value="да" onclick="hideFields(false)">да</label><br> 
+        <label for="doclad"><input type="radio" name="doclad" id="no" value="no" onclick="hideFields(true)" checked>нет</label><br>     
+        <p></p>
+        </div>
+    <!--поле с темой доклада-->
+        <div id="show_fields">
+            
+                <label for="theme">Укажите, пожалуйста, тему доклада</label>
+                <input type="text" name="theme" id="theme" size=100>
+           <p></p>
+        </div>   
+    <!-- скрипт, если есть доклад, то выводить поле с темой-->
+        <script>
+    document.getElementById('show_fields').style.display=('none');
+    function hideFields(hide){
+        document.getElementById('show_fields').style.display = hide ? 'none' : 'block';
+                            }
+        </script>  
+    
+    <!--чекбокс с секциями (лишняя конструкция, для вариативности)-->
+    <!--<div>
+        <legend>Укажите, пожалуйста, планируемые к посещению секции конференции:</legend>
+        <label for="event"><input type="checkbox" name="event" id="mat">1 секция: математика</label><br>
+        <label for="event"><input type="checkbox" name="event" id="phys">2 секция: физика</label><br>
+        <label for="event"><input type="checkbox" name="event" id="inf">3 секция: информатика</label><br>
+    </div>
+ 
+    -->
+
+    <!--список с секциями конференции-->
+        <div>
+        
+        <label for="conference">Выберете, пожалуйста, интересующую секцию конференции <span style="color: red;">*</span>:</label><br>
+        <select name="conference" id="conference">
+        <option value="математика">математика</option>
+        <option value="физика">физика</option>
+        <option value="информатика">информатика</option>
+    </select>
+    <p></p>
+        </div>
+  
+   
+    <!--кнопка submit-->
+        <div>
+        <input type="submit" value="отправить">
+        </div>
+
+    </fieldset>
+       </form>
+
+    <!--подключим скрипт котрый выводит данные формы на консоль
+    <script src="/Users/evsti/Desktop/site/script/script_task_1.js"></script>-->
+
+   
+    </main>
+    <footer>
+        <h3>Задание № 1</h3>
+    </footer>
+</body>
+</html>
