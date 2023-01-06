@@ -16,15 +16,17 @@
     </header>
   
     <main>    
-           
+        <fieldset>   
        <form action="/script/date_form.php" method ="post" id="form">
-         
-        <fieldset>
-            <legend><b> Форма регистрации участника конференции</b></legend>
+      
+        
+            <legend><b> ФОРМА РЕГИСТРАЦИИ УЧАСТНИКА КОНФЕРЕНЦИИ</b></legend>
+            <p></p>
+            
     <!--добавим поле ФИО с ФЛК-->
         <div>
         <label for="fio">ФИО <span style="color: red;">*</span></label>
-        <input type="text" name="fio" id="fio" placeholder="к примеру, Иванов Иван Иванович" size="30" required pattern="^(([А-ЯЁ]{1}[а-яё]*)([-][А-ЯЁ]{1}[а-яё]*)?\s([А-ЯЁ]{1}[а-яё]*)\s[А-ЯЁ][а-яё]*)$">
+        <input type="text" name="fio" id="fio" placeholder="к примеру, Иванов Иван Иванович"  required pattern="^(([А-ЯЁ]{1}[а-яё]*)([-][А-ЯЁ]{1}[а-яё]*)?\s([А-ЯЁ]{1}[а-яё]*)\s[А-ЯЁ][а-яё]*)$" size="35">
         <p></p>
         </div>
     <!--добавим после с др-->
@@ -42,21 +44,24 @@
     <!--добавим почту с ФЛК-->
         <div>
         <label for="email">Электронная почта <span style="color: red;">*</span></label>
-        <input type="email" name="email" id="email" required pattern="([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)" placeholder="к примеру, example@mail.ru">
+        <input type="email" name="email" id="email" required pattern="([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)" placeholder="к примеру, example@mail.ru" size="25">
         <p></p>
         </div>
     <!--доклад (переключатель)-->
+      
         <div>
-        <legend>Имеется ли доклад? <span style="color: red;">*</span></legend>
+            <legend>Имеется ли доклад? <span style="color: red;">*</span></legend>
         <label for="doclad"><input type="radio" name="doclad" id="yes" value="да" onclick="hideFields(false)">да</label><br> 
         <label for="doclad"><input type="radio" name="doclad" id="no" value="нет" onclick="hideFields(true)" checked>нет</label><br>     
         <p></p>
-        </div>
+        </label>
+            <p></p>
+            </div>
     <!--поле с темой доклада-->
         <div id="show_fields">
             
                 <label for="theme">Укажите, пожалуйста, тему доклада</label>
-                <input type="text" name="theme" id="theme" size=100>
+                <input type="text" name="theme" id="theme">
            <p></p>
         </div>   
     <!-- скрипт, если есть доклад, то выводить поле с темой-->
@@ -83,7 +88,7 @@
    
     <!--кнопка submit-->
         <div>
-        <input type="submit" value="отправить">
+        <button type="submit">ОТПРАВИТЬ</button>
         </div>
 
     </fieldset>
