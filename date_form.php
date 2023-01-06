@@ -1,17 +1,16 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <b>Ваша ФИО</b>
-    <?php
-    $fio = $_POST['fio'];
-    echo $fio;
-    ?>
-</body>
-</html>
+<?php
+$str = "Здравствуйте,участник конференции. Проверьте, пожалуйста, свои регистрационные данные: <p></p>
+    
+    ФИО: ".$_REQUEST["fio"]. " <p></p>
+    
+    Дата рождения: ".$_REQUEST["BirthDate"]. " <p></p>
+    Телефон: ".$_REQUEST["phone"]."<p></p>
+    Электронная почта: ".$_REQUEST["email"]. "<p></p>
+    Имеется ли доклад?: ".$_REQUEST["doclad"]. " <p></p>
+    Тема доклада: ".$_REQUEST["theme"]."! <br><p></p>";
+    
+    $str .="Вы выбрали секцию конференции: 
+    ".$_REQUEST["conference"];
+echo $str;
+?>
