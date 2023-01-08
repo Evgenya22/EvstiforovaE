@@ -77,13 +77,11 @@ $e=$_REQUEST['doclad'];
 $f=$_REQUEST['theme'];
 $g=$_REQUEST['conference'];
 
-
-
 $sql="INSERT INTO task1 (fio,BirthDate,phone,email,doclad,theme,conference)
-VALUES ('$a','$b','$c','$d','$e','$f','g')";
+VALUES ('$a','$b','$c','$d','$e','$f','$g')";
 
 if ($conn->query($sql)){
-    echo "данные отправлены";
+    echo "<p></p>данные записаны в БД";
 }
 else{
     echo "error: ", $sql, $conn->error;
