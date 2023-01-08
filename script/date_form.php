@@ -53,36 +53,44 @@ $str = "Здравствуйте, Ваши регистрационные дан
     $str .="Вы выбрали секцию конференции: 
     ".$_REQUEST["conference"];
 echo $str;
+
 ?>
 
-<!--подключаемся к бд-->
+
+<!--подключение к БД, запись в БД-->
 <?php
+$servername = "localhost";
+$username = "root";
+$password = "1104";
+$dbname = "form date";
 
-$host = 'localhost';  // Хост, у нас все локально
-$user = 'root';    // Имя созданного вами пользователя
-//$pass = '1q2w3e4r5t'; // Установленный вами пароль пользователю
-$db_name = "form date";   // Имя базы данных
-$link = mysqli_connect($host, $user, $pass, $db_name); // Соединяемся с базой
-
-// Ругаемся, если соединение установить не удалось
-if (!$link) {
-  echo 'Не могу соединиться с БД. Код ошибки: ' . mysqli_connect_errno() . ', ошибка: ' . mysqli_connect_error();
-  exit;
+$conn = new mysqli($servername, $username,$password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+
+$a=$_REQUEST['fio'];
+$b=$_REQUEST['BirthDate'];
+$c=$_REQUEST['phone'];
+$d=$_REQUEST['email'];
+$e=$_REQUEST['doclad'];
+$f=$_REQUEST['theme'];
+$g=$_REQUEST['conference'];
+
+
+
+$sql="INSERT INTO task1 (fio,BirthDate,phone,email,doclad,theme,conference)
+VALUES ('$a','$b','$c','$d','$e','$f','g')";
+
+if ($conn->query($sql)){
+    echo "данные отправлены";
+}
+else{
+    echo "error: ", $sql, $conn->error;
+}
+    
+$conn->close();
 ?>
-<!--запись в бд-->
-<?php
- 
- $data = array( 'fio' => $_REQUEST["fio"] ); 
- $query = $db->prepare("INSERT INTO $db_table (fio) values (:fio)");
-        // Выполняем запрос с данными
-        $query->execute($data);
- 
- 
- 
-    ?>
-
-
 
 </fieldset>
 </body>
