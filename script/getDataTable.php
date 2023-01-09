@@ -44,20 +44,12 @@ fieldset {
 
 <!--подключение к БД, запись в БД-->
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "1104";
-$dbname = "form_date";
+include'connection_db';
+$query = mysqli_query($conn, "SELECT * FROM 'task1'");
+$numrows = mysqli_num_rows($query);
+echo $numrows;
 
-$conn = new mysqli($servername, $username,$password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-else{
-    echo "<br>Successful connection to DataBase";
-};
-
-
+/*
 $result = mysqli_query("SELECT * FROM 'task1'");
 $row = mysqli_fetch_array($result);
 while($row=mysqli_fetch_array($result)) {
@@ -70,7 +62,7 @@ $f=$_REQUEST['theme'];
 $g=$_REQUEST['conference'];
     echo "$a $b $c $d $e $f $g </br><hr/>";
 }
-
+*/
     
 $conn->close();
 ?>
