@@ -6,20 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TASK 1_данные формы</title>
     <!--подкл файл со стилями-->
-    <style>
+    
 
-fieldset {
-    margin: 0 auto;
-    width: 500px;
-    height: 350px;
-    padding: 20px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.82);
-    background-image: url(/img/date_reg.jpg);
-}
 
-    </style>
-
-<b></b>
 
 </head>
 
@@ -39,32 +28,10 @@ fieldset {
     <fieldset>
 
 
-
-    //Выведите список зарегистрированных участников в виде таблицы
-
 <!--подключение к БД, запись в БД-->
 <?php
 include'connection_db';
-$query = mysqli_query($conn, "SELECT * FROM 'task1'");
-$numrows = mysqli_num_rows($query);
-echo $numrows;
 
-/*
-$result = mysqli_query("SELECT * FROM 'task1'");
-$row = mysqli_fetch_array($result);
-while($row=mysqli_fetch_array($result)) {
-$a=$_REQUEST['fio'];
-$b=$_REQUEST['BirthDate'];
-$c=$_REQUEST['phone'];
-$d=$_REQUEST['email'];
-$e=$_REQUEST['doclad'];
-$f=$_REQUEST['theme'];
-$g=$_REQUEST['conference'];
-    echo "$a $b $c $d $e $f $g </br><hr/>";
-}
-*/
-    
-$conn->close();
 ?>
 
 
