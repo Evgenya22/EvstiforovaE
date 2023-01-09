@@ -68,6 +68,9 @@ $conn = new mysqli($servername, $username,$password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+else{
+    echo "<br>Successful connection to DataBase";
+};
 
 $a=$_REQUEST['fio'];
 $b=$_REQUEST['BirthDate'];
@@ -77,8 +80,11 @@ $e=$_REQUEST['doclad'];
 $f=$_REQUEST['theme'];
 $g=$_REQUEST['conference'];
 
+$sql="INSERT INTO `task1` (`fio`,`BirthDate`,`phone`,`email`,`doclad`,`theme`,`conference`) 
+VALUES ('".$a."','".$b."','".$c."','".$d."','".$e."','".$f."','".$g."')";
+/* можно так добавлять
 $sql="INSERT INTO task1 (fio,BirthDate,phone,email,doclad,theme,conference)
-VALUES ('$a','$b','$c','$d','$e','$f','$g')";
+VALUES ('$a','$b','$c','$d','$e','$f','$g')";*/
 
 if ($conn->query($sql)){
     echo "<p></p>данные записаны в БД";
@@ -89,6 +95,7 @@ else{
     
 $conn->close();
 ?>
+//Выведите список зарегистрированных участников в виде таблицы
 
 </fieldset>
 </body>
