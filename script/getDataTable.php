@@ -30,7 +30,24 @@
 
 <!--подключение к БД, запись в БД-->
 <?php
-include'connection_db';
+include 'connection_db.php';
+$sql = "SELECT * FROM task1";
+if($result = $conn->query($sql)){
+    $rowsCount = $result->num_rows; // количество полученных строк
+    echo "<p>Получено объектов: $rowsCount</p>";
+    echo "<table><tr><th>Id</th><th>Имя</th><th>Возраст</th></tr>";
+    foreach($result as $row){
+        echo "<tr>";
+            echo "<td>" . $row["id"] . "</td>";
+            echo "<td>" . $row["fio"] . "</td>";
+            echo "<td>" . $row["phone"] . "</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+    $result->free();
+} else{
+    echo "Ошибка: " . $conn->error;
+}
 
 ?>
 

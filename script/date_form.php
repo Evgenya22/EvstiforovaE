@@ -59,7 +59,7 @@ echo $str;
 <!--
 <!--подключение к БД, запись в БД-->
 <?php
-include'connection_db';
+include 'connection_db.php';
 
 $a=$_REQUEST['fio'];
 $b=$_REQUEST['BirthDate'];

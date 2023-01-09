@@ -10,6 +10,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 else{
-    echo "<br>Successful connection to DataBase";
+    echo "<br> Успешно подключены к БД";
 };
 ?>
