@@ -55,7 +55,7 @@ if($result = $conn->query($sql)){
 } else{
     echo "Ошибка: " . $conn->error;
 }
-
+$conn->close();
 ?>
 
 
