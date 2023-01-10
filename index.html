@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TASK 1_данные формы</title>
+    <title>Главная страница_Задание 1</title>
     <!--подкл файл со стилями-->
     <link rel="stylesheet" href="style/style.css">
 </head>
@@ -15,9 +15,9 @@
         <b> Форма регистрации </b>
         <p></p>
       <ul>
-            <li><a href="../index.html">Вернуться на форму регистрации</a></li>
-            <li><a href="pages/galary.html">Фотогалерея</a></li>
-            <li><a href="../localhost/script/getDataTable.php">Зарегистрированные участники конференции</a></li>
+            <li><a href="#">Главная</a></li>    
+            <li><a href="/page/participants_list.php">Посмотреть список зарегистрированных участников конференции</a></li>
+            <li><a href="#">Контакты</a></li>
         
         </ul>
        
@@ -25,7 +25,7 @@
   
     <main>    
         <fieldset>   
-       <form action="/script/date_form.php" method ="post" id="form">
+       <form action="/page/form_date.php" method ="post" id="form">
       
         
             <legend><b> ФОРМА РЕГИСТРАЦИИ УЧАСТНИКА КОНФЕРЕНЦИИ</b></legend>
@@ -34,7 +34,7 @@
     <!--добавим поле ФИО с ФЛК-->
         <div>
         <label for="fio">ФИО <span style="color: red;">*</span></label>
-        <input type="text" name="fio" id="fio" placeholder="к примеру, Иванов Иван Иванович"  required pattern="^(([А-ЯЁ]{1}[а-яё]*)([-][А-ЯЁ]{1}[а-яё]*)?\s([А-ЯЁ]{1}[а-яё]*)\s[А-ЯЁ][а-яё]*)$" size="35">
+        <input type="text" name="fio" id="fio" placeholder="образец: Иванов Иван Иванович"  required pattern="^(([А-ЯЁ]{1}[а-яё]*)([-][А-ЯЁ]{1}[а-яё]*)?\s([А-ЯЁ]{1}[а-яё]*)\s[А-ЯЁ][а-яё]*)$" size="35">
         <p></p>
         </div>
     <!--добавим после с др-->
@@ -46,13 +46,13 @@
     <!--добавим телефон с ФЛК-->
         <div>
         <label for="phone">Телефон <span style="color: red;">*</span></label>
-        <input type="tel" name="phone" id="phone" required pattern="^\+7{1}\d{10}$" placeholder="к примеру, +79098087678">
+        <input type="tel" name="phone" id="phone" required pattern="^\+7{1}\d{10}$" placeholder="образец: +79098087678">
         <p></p>
         </div>
     <!--добавим почту с ФЛК-->
         <div>
         <label for="email">Электронная почта <span style="color: red;">*</span></label>
-        <input type="email" name="email" id="email" required pattern="([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)" placeholder="к примеру, example@mail.ru" size="25">
+        <input type="email" name="email" id="email" required pattern="([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)" placeholder="образец: example@mail.ru" size="25">
         <p></p>
         </div>
     <!--доклад (переключатель)-->
@@ -106,15 +106,10 @@
     <script src="/Users/evsti/Desktop/site/script/script_task_1.js"></script>-->
 
 
-    <fieldset>
-        <form action="/script/getDataTable.php" method="post">
-        <input id="submit" type="submit" value="Вывести всех участников"><br/>
-        </form>
-    </fieldset>
 
     </main>
     <footer>
-        <h3>Задание № 1</h3>
+        <h3>Задание № 1 от 11.01.2023</h3>
     </footer>
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TASK 1_данные формы</title>
+    <title>Запись в базу данных</title>
     <!--подкл файл со стилями-->
     <style>
 
@@ -30,8 +30,8 @@ fieldset {
       <p></p>
       <ul>
             <li><a href="../index.html">Вернуться на форму регистрации</a></li>
-            <li><a href="pages/galary.html">Фотогалерея</a></li>
-            <li><a href="#">Контакты</a></li>
+            <li><a href="getDataTable.php">Зарегистрированные участники конференции</a></li>
+            
         
         </ul>
     </header>
@@ -55,7 +55,7 @@ $result = mysqli_query($conn, $sql);
 if ($result == false) {
     print("<br>Произошла ошибка при выполнении запроса");
 } else {
-    print("<br>Данные записаны упешно в базу данных");}
+    print("<br>Данные записаны в базу данных уcпешно");}
 
 $conn->close();
 
