@@ -13,12 +13,7 @@ table, th, td {
 
     </style>
 
-    
-
-
-
 </head>
-
 
 <body>
     <header>
