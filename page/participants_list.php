@@ -47,6 +47,7 @@ if($result = $conn->query($sql)){
             echo "<td>" . $row["BirthDate"] . "</td>";
             echo "<td>" . $row["phone"] . "</td>";
             echo "<td>" . $row["email"] . "</td>";
+            echo "<td>" . $row["doclad"] . "</td>";
             echo "<td>" . $row["theme"] . "</td>";
             echo "<td>" . $row["conference"] . "</td>";
 
