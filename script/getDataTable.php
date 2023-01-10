@@ -31,6 +31,7 @@
 <!--подключение к БД, запись в БД-->
 <?php
 include 'connection_db.php';
+/*
 $sql = "SELECT * FROM task1";
 if($result = $conn->query($sql)){
     $rowsCount = $result->num_rows; // количество полученных строк
@@ -55,7 +56,7 @@ if($result = $conn->query($sql)){
 } else{
     echo "Ошибка: " . $conn->error;
 }
-$conn->close();
+$conn->close();*/
 ?>
 
 

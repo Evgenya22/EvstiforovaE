@@ -56,35 +56,6 @@ echo $str;
 
 ?>
 
-<!--
-<!--подключение к БД, запись в БД-->
-<?php
-include 'connection_db.php';
-
-$a=$_REQUEST['fio'];
-$b=$_REQUEST['BirthDate'];
-$c=$_REQUEST['phone'];
-$d=$_REQUEST['email'];
-$e=$_REQUEST['doclad'];
-$f=$_REQUEST['theme'];
-$g=$_REQUEST['conference'];
-
-$sql="INSERT INTO `task1` (`fio`,`BirthDate`,`phone`,`email`,`doclad`,`theme`,`conference`) 
-VALUES ('".$a."','".$b."','".$c."','".$d."','".$e."','".$f."','".$g."')";
-/* можно так добавлять
-$sql="INSERT INTO task1 (fio,BirthDate,phone,email,doclad,theme,conference)
-VALUES ('$a','$b','$c','$d','$e','$f','$g')";*/
-
-if ($conn->query($sql)){
-    echo "<p></p>данные записаны в БД";
-}
-else{
-    echo "error: ", $sql, $conn->error;
-}
-    
-$conn->close();
-?>
-
 
 </fieldset>
 </body>
