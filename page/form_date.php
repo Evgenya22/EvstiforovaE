@@ -7,6 +7,18 @@
     <title>Данные формы</title>
     <!--подкл файл со стилями-->
     <style>
+  html, body {
+height: 100%;
+}
+.main {
+min-height: 100%;
+margin-bottom: -100px;
+}
+.footer {   
+    height: 100px;
+    background: #666;
+    color: rgb(255, 255, 255);  
+          }  
 
 fieldset {
     color: blue;
@@ -44,10 +56,7 @@ input{
     left: 50%;
     font-weight: bold;
 }
-footer {   
-    background: #666;
-    color: rgb(255, 255, 255);  
-          }
+
 
     </style>
 </head>
@@ -63,7 +72,7 @@ footer {
             
         </ul>
     </header>
-    <main>
+    <main class="main">
 
 <fieldset>
 <?php
@@ -129,9 +138,9 @@ if (isset($_POST['submit'])) {
         </form>
         </div> 
 
-        </main>
+ </main>
 
-<footer id="footer">
+<footer class="footer">
         <h3>Контакты</h3>
         <p>123366, Россия, Москва, Проспект Мира, 150</p>
         <p>Тел.:+7(495) 642-23-78</p>

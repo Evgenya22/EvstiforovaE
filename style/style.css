@@ -1,18 +1,4 @@
 
-html, body {
-height: 100%;
-}
-.main {
-min-height: 100%;
-margin-bottom: -80px;
-}
-.footer {   
-    height: 80px;
-    background: #666;
-    color: rgb(255, 255, 255);  
-          }
-
-
 ::placeholder{
     
     font-style: italic;
@@ -81,4 +67,26 @@ transform: translate(-50%, 0);
     border-radius: 20px/20px;
 }
 
+#menu, #menu li {
+    margin: 0; /* убрать внутренние отступы */
+    padding: 0; /* убрать внешние отступы */
+}
+#menu {
+    background: #03658e; /* цвет фона навигационной панели */
+}
 
+#menu li{
+    display:inline-block; /* расположить пункты горизонтально */
+    text-align: center; /* текст горизонтально по центру */
+}
+
+#menu a {
+    display: block; /* ссылка растягивается на весь пункт li */
+    padding: 5px 15px; /* задаем внутренние отступы */
+    color: #fff; /* цвет текста */
+    text-decoration: none; /* убрать нижнее подчёркивание у ссылок */
+}
+
+#menu a:hover {
+    background: #8AB8CC; /* фон пунктов при наведении */
+}

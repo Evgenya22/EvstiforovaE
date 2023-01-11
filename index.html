@@ -8,12 +8,18 @@
     <!--подкл файл со стилями-->
     <link rel="stylesheet" href="style/style.css">
     <style>
-        footer {
-    
+        html, body {
+height: 100%;
+}
+.main {
+min-height: 100%;
+margin-bottom: -100px;
+}
+.footer {   
+    height: 100px;
     background: #666;
-    color: rgb(255, 255, 255);
-    
-  }
+    color: rgb(255, 255, 255);  
+          }
     </style>
 </head>
 
@@ -31,8 +37,8 @@
        
     </header>
   
-    <main>    
-        <p><b>Для участия в конференции, пожалуйста, укажите свои данные, согласно приведенной ниже форме, в соответствии с форматом, приведенных в полях формы примеров.</b></p>
+    <main class="main">    
+        <p><b>Для участия в конференции, пожалуйста, укажите свои данные, согласно приведенной ниже форме, в соответствии с форматом, приведенных в полях формы примеров.</b></p><br>
         <fieldset>   
        <form action="/page/form_date.php" method ="post" id="form">
       
@@ -115,7 +121,7 @@
     <script src="/Users/evsti/Desktop/site/script/script_task_1.js"></script>-->
 
     </main>
-    <footer id="cont">
+    <footer class="footer">
         <h3>Контакты</h3>
         <p>123366, Россия, Москва, Проспект Мира, 150</p>
         <p>Тел.:+7(495) 642-23-78</p>

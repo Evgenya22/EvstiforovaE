@@ -7,21 +7,53 @@
     <title>Главная</title>
     <link rel="stylesheet" href="style/style.css">
     <style>
-       
+       html, body {
+height: 100%;
+}
+.main {
+min-height: 100%;
+margin-bottom: -100px;
+}
+.footer {   
+    height: 100px;
+    background: #666;
+    color: rgb(255, 255, 255);  
+          }
+          #navbar {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  border: 2px solid #0066FF;
+  border-radius: 20px 5px;
+  width: 550px;
+  text-align: center;
+  background-color: #33ADFF;
+}
+
     </style>
 </head>
 <body>
+    <ul id="menu">
+        <li><a href="../HomePage.html">Главная страница</a></li>
+            <li><a href="../index.html">Форма регистрации</a></li>
+            <li><a href="/page/participants_list.php">Посмотреть список зарегистрированных участников конференции</a></li>
+        <li><a href="#cont">Контакты</a></li>
+       
+      </ul>
+
     <main class="main">
     <div>
     <h1>Добро пожаловать на сайт "Конференции по новым компьютерным технологиям и защите компьютерных программ"</h1>
-    <p>Для регистрации пройдите пожалуйста по ссылке:</p>
-    <a href="index.html">Форма регистрации</a>
-</div>
+    </div>
 <div>
     <img src="/img/HH.jpg" alt="картинка">
 </div>
+<div>
+<p>Для регистрации пройдите пожалуйста по ссылке:</p>
+    <a href="index.html">Форма регистрации</a>
+</div>
 </main>
-    <footer class="footer">
+    <footer class="footer" id="cont">
         <h3>Контакты</h3>
         <p>123366, Россия, Москва, Проспект Мира, 150</p>
         <p>Тел.:+7(495) 642-23-78</p>
