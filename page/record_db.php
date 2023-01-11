@@ -15,7 +15,8 @@ margin-bottom: -100px;}
     height: 100px;
     background: #666;
     color: rgb(255, 255, 255); }  
-fieldset {
+
+    fieldset {
     margin: 0 auto;
     width: 400px;
     height: 200px;
@@ -41,10 +42,10 @@ body
                   
         </ul>
     </header>
+
 <main class="main">
     <fieldset>
-  
-<!--Запись в БД-->
+  <!--Запись в БД-->
 <?php
  session_start(); //подключаем сессию, чтобы переменные из одного файла передались в другой,иначе не получится
 if(isset($_POST['submit'])){
@@ -56,10 +57,8 @@ $d=$_SESSION['email'];
 $e=$_SESSION['doclad'];
 $f=$_SESSION['theme'];
 $g=$_SESSION['conference'];
-
 $sql="INSERT INTO $usertable (fio,BirthDate,phone,email,doclad,theme,conference) VALUES ('$a','$b','$c','$d','$e','$f','$g')";
 $result = mysqli_query($conn, $sql);
-   
 if ($result == false) {
     print("<br>Произошла ошибка при выполнении запроса");
 } else {
@@ -68,12 +67,13 @@ if ($result == false) {
 $conn->close();}
 ?>
 </fieldset>
-<footer class="footer">
+</main>
+<footer class="footer" id="cont">
         <h3>Контакты</h3>
         <p>123366, Россия, Москва, Проспект Мира, 150</p>
         <p>Тел.:+7(495) 642-23-78</p>
     </footer>
-    </main>
+
 </body>
 </html>
 
