@@ -5,22 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Запись в базу данных</title>
-    
     <style>
-
 html, body {
-height: 100%;
-}
+height: 100%;}
 .main {
 min-height: 100%;
-margin-bottom: -100px;
-}
+margin-bottom: -100px;}
 .footer {   
     height: 100px;
     background: #666;
-    color: rgb(255, 255, 255);  
-          }
-
+    color: rgb(255, 255, 255); }  
 fieldset {
     margin: 0 auto;
     width: 400px;
@@ -33,8 +27,7 @@ body
 {
     background-image: url(/img/background.jpg);
 }
-
-    </style>
+</style>
 <b></b>
 </head>
 <body>
@@ -75,7 +68,7 @@ if ($result == false) {
 $conn->close();}
 ?>
 </fieldset>
-<footer id="cont" class="footer">
+<footer class="footer">
         <h3>Контакты</h3>
         <p>123366, Россия, Москва, Проспект Мира, 150</p>
         <p>Тел.:+7(495) 642-23-78</p>

@@ -23,7 +23,6 @@ margin-bottom: -100px;
 fieldset {
     color: blue;
     font-style: oblique;
-    
     font-weight: bolder;
     margin: 0 auto;
     width: 400px;
@@ -32,18 +31,15 @@ fieldset {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.82);
     background-image: url(/img/date_reg.jpg);
     line-height: 1.5;
-
 }
 body
 {
     background-image: url(/img/background.jpg);
 }
-
 p
 {
     font-weight: bold;
 }
-
 input{
     height:100px;
     weight:100px;
