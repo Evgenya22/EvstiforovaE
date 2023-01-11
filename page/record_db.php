@@ -20,14 +20,9 @@ body
 {
     background-image: url(/img/background.jpg);
 }
-
     </style>
-
 <b></b>
-
 </head>
-
-
 <body>
     <header>
      <h1> Результаты регистрации участника конференции</h1>
@@ -35,34 +30,29 @@ body
       <ul>
             <li><a href="../index.html">Форма регистрации</a></li>
             <li><a href="participants_list.php">Посмотреть список зарегистрированных участников конференции</a></li>
-            <li><a href="#">Контакты</a></li>
-           
+            <li><a href="#">Контакты</a></li>        
         </ul>
     </header>
 
-
-
-  
     <fieldset>
   
 
-<!--подключение к БД-->
+<!--Запись в БД-->
 <?php
-
+ session_start(); //подключаем сессию, чтобы переменные из одного файла передались в другой,иначе не получится
 if(isset($_POST['submit'])){
-
-include 'connection_db.php';
-$a=$_REQUEST['fio'];
-$b=$_REQUEST['BirthDate'];
-$c=$_REQUEST['phone'];
-$d=$_REQUEST['email'];
-$e=$_REQUEST['doclad'];
-$f=$_REQUEST['theme'];
-$g=$_REQUEST['conference'];
-
+require_once('connection_db.php');
+$a=$_SESSION['fio'];
+$b=$_SESSION['BirthDate'];
+$c=$_SESSION['phone'];
+$d=$_SESSION['email'];
+$e=$_SESSION['doclad'];
+$f=$_SESSION['theme'];
+$g=$_SESSION['conference'];
+echo $f;
 $sql="INSERT INTO $usertable (fio,BirthDate,phone,email,doclad,theme,conference) VALUES ('$a','$b','$c','$d','$e','$f','$g')";
 $result = mysqli_query($conn, $sql);
-
+   
 if ($result == false) {
     print("<br>Произошла ошибка при выполнении запроса");
 } else {
@@ -70,8 +60,6 @@ if ($result == false) {
 
 $conn->close();}
 ?>
-
-
 
 </fieldset>
 </body>
