@@ -84,13 +84,20 @@ $str .="Вы выбрали секцию конференции: ".$_REQUEST["co
 echo $str;*/
 
 print("<b>Здравствуйте, Ваши регистрационные данные следующие:</b><br>");
-    $a=$_REQUEST['fio'];
+$_SESSION['fio'] = $_REQUEST['fio'];
+$_SESSION['BirthDate'] = $_REQUEST['BirthDate'];
+$_SESSION['phone'] = $_REQUEST['phone'];
+$_SESSION['email'] = $_REQUEST['email'];
+$_SESSION['doclad'] = $_REQUEST['doclad'];
+$_SESSION['theme'] = $_REQUEST['theme'];
+$_SESSION['conference'] = $_REQUEST['conference'];
+    /*$a=$_REQUEST['fio'];
     $b=$_REQUEST['BirthDate'];
     $c=$_REQUEST['phone'];
     $d=$_REQUEST['email'];
     $e=$_REQUEST['doclad'];
     $f=$_REQUEST['theme'];
-    $g=$_REQUEST['conference'];
+    $g=$_REQUEST['conference'];*/
 print("ФИО: $a<br>");
 print("Дата рождения: $b<br>");
 print("Номер телефона: $c<br>");
@@ -98,7 +105,7 @@ print("Электронная почта: $d<br>");
 print("Имеется ли доклад?: $e<br>");
 print("Тема доклада: $f<br>");
 print("Секция конференции: $g<br>");
-
+/*
 if (isset($_POST['submit'])) {
     $_SESSION['fio'] = $_REQUEST['fio'];
     $_SESSION['BirthDate'] = $b;
@@ -108,8 +115,8 @@ if (isset($_POST['submit'])) {
     $_SESSION['theme'] = $f;
     $_SESSION['conference'] = $g;
     var_dump($_SESSION);
+}*/
 
-}
 ?>
 <?php
 /*
