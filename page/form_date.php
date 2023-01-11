@@ -15,7 +15,7 @@ fieldset {
     font-weight: bolder;
     margin: 0 auto;
     width: 400px;
-    height: 300px;
+    height: 400px;
     padding: 20px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.82);
     background-image: url(/img/date_reg.jpg);
@@ -83,21 +83,36 @@ $str = "Здравствуйте, Ваши регистрационные дан
 $str .="Вы выбрали секцию конференции: ".$_REQUEST["conference"];
 echo $str;*/
 
-print("<b>Здравствуйте, Ваши регистрационные данные следующие:</b><br>");
-$_SESSION['fio'] = $_REQUEST['fio'];
-$_SESSION['BirthDate'] = $_REQUEST['BirthDate'];
-$_SESSION['phone'] = $_REQUEST['phone'];
-$_SESSION['email'] = $_REQUEST['email'];
-$_SESSION['doclad'] = $_REQUEST['doclad'];
-$_SESSION['theme'] = $_REQUEST['theme'];
-$_SESSION['conference'] = $_REQUEST['conference'];
+//print("<b>Здравствуйте, Ваши регистрационные данные следующие:</b><br>");
+if (isset($_POST['a'])) {
+    $_SESSION['fio'] = $_REQUEST['fio'];
+    $_SESSION['BirthDate'] = $_REQUEST['BirthDate'];
+    $_SESSION['phone'] = $_REQUEST['phone'];
+    $_SESSION['email'] = $_REQUEST['email'];
+    $_SESSION['doclad'] = $_REQUEST['doclad'];
+    $_SESSION['theme'] = $_REQUEST['theme'];
+    $_SESSION['conference'] = $_REQUEST['conference'];
+$str = "Здравствуйте, Ваши регистрационные данные следующие: <p></p>
+    
+    ФИО: <b>".$_SESSION['fio']. " </b><p></p>
+    
+    Дата рождения: ".$_SESSION['BirthDate']. "<p></p>
+    Телефон: ".$_SESSION['phone']."<p></p>
+    Электронная почта: ".$_SESSION['email']. "<p></p>
+    Имеется ли доклад? ".$_SESSION['doclad']. "<p></p>
+    Тема доклада: ".$_SESSION['theme']."<br><p></p>";
+    
+$str .="Вы выбрали секцию конференции: ".$_SESSION["conference"];
+echo $str;
+    
+}
     /*$a=$_REQUEST['fio'];
     $b=$_REQUEST['BirthDate'];
     $c=$_REQUEST['phone'];
     $d=$_REQUEST['email'];
     $e=$_REQUEST['doclad'];
     $f=$_REQUEST['theme'];
-    $g=$_REQUEST['conference'];*/
+    $g=$_REQUEST['conference'];
 print("ФИО: $a<br>");
 print("Дата рождения: $b<br>");
 print("Номер телефона: $c<br>");
