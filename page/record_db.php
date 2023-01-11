@@ -20,6 +20,10 @@ body
 {
     background-image: url(/img/background.jpg);
 }
+footer {   
+    background: #666;
+    color: rgb(255, 255, 255);  
+  }
     </style>
 <b></b>
 </head>
@@ -28,15 +32,15 @@ body
      <h1> Результаты регистрации участника конференции</h1>
       <p></p>
       <ul>
+            <li><a href="../HomePage.html">Главная страница</a></li>
             <li><a href="../index.html">Форма регистрации</a></li>
             <li><a href="participants_list.php">Посмотреть список зарегистрированных участников конференции</a></li>
-            <li><a href="#">Контакты</a></li>        
+                  
         </ul>
     </header>
-
+<main>
     <fieldset>
   
-
 <!--Запись в БД-->
 <?php
  session_start(); //подключаем сессию, чтобы переменные из одного файла передались в другой,иначе не получится
@@ -49,7 +53,7 @@ $d=$_SESSION['email'];
 $e=$_SESSION['doclad'];
 $f=$_SESSION['theme'];
 $g=$_SESSION['conference'];
-echo $f;
+
 $sql="INSERT INTO $usertable (fio,BirthDate,phone,email,doclad,theme,conference) VALUES ('$a','$b','$c','$d','$e','$f','$g')";
 $result = mysqli_query($conn, $sql);
    
@@ -60,8 +64,13 @@ if ($result == false) {
 
 $conn->close();}
 ?>
-
 </fieldset>
+<footer id="cont">
+        <h3>Контакты</h3>
+        <p>123366, Россия, Москва, Проспект Мира, 150</p>
+        <p>Тел.:+7(495) 642-23-78</p>
+    </footer>
+    </main>
 </body>
 </html>
 
