@@ -64,12 +64,10 @@ input{
       <ul>
            <li><a href="../HomePage.html">Главная страница</a></li>
             <li><a href="../index.html">Форма регистрации</a></li>
-            <li><a href="participants_list.php">Посмотреть список зарегистрированных участников конференции</a></li>
-            
+            <li><a href="participants_list.php">Посмотреть список зарегистрированных участников конференции</a></li>         
         </ul>
     </header>
     <main class="main">
-
 <fieldset>
 <?php
 session_start(); //чтобы данные передавились между стр сайта надо открыть сессию и записать туда данные
