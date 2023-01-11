@@ -33,10 +33,8 @@ body
         
         </ul>
     </header>
-  
-    
-    <div>
-
+    <main>
+   
 <!--подключение к БД, запись в БД-->
 <?php
 
@@ -67,6 +65,7 @@ if($result = $conn->query($sql)){
 }
 $conn->close();
 ?>
-</div>
+
+</main>
 </body>
 </html>

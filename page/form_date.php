@@ -43,16 +43,14 @@ input{
     background-color: thistle;
     left: 50%;
     font-weight: bold;
-
-
 }
+footer {   
+    background: #666;
+    color: rgb(255, 255, 255);  
+          }
 
     </style>
-
-
-
 </head>
-
 
 <body>
     <header>
@@ -65,26 +63,12 @@ input{
             
         </ul>
     </header>
-    
+    <main>
 
 <fieldset>
 <?php
-session_start();
-
-/*
-$str = "Здравствуйте, Ваши регистрационные данные следующие: <p></p>
-    
-    ФИО: <b>".$_REQUEST["fio"]. " </b><p></p>
-    
-    Дата рождения: ".$_REQUEST["BirthDate"]. "<p></p>
-    Телефон: ".$_REQUEST["phone"]."<p></p>
-    Электронная почта: ".$_REQUEST["email"]. "<p></p>
-    Имеется ли доклад? ".$_REQUEST["doclad"]. "<p></p>
-    Тема доклада: ".$_REQUEST["theme"]."<br><p></p>";
-$str .="Вы выбрали секцию конференции: ".$_REQUEST["conference"];
-echo $str;*/
-
-//print("<b>Здравствуйте, Ваши регистрационные данные следующие:</b><br>");
+session_start(); //чтобы данные передавились между стр сайта надо открыть сессию и записать туда данные
+//если на стр рег нажата сабмит то данные записываются в сессию
 if (isset($_POST['a'])) {
     $_SESSION['fio'] = $_REQUEST['fio'];
     $_SESSION['BirthDate'] = $_REQUEST['BirthDate'];
@@ -107,7 +91,8 @@ $str .="Вы выбрали секцию конференции: ".$_SESSION["co
 echo $str;
     
 }
-    /*$a=$_REQUEST['fio'];
+/*кусок кода про запас как можно манипулировать переменными
+    $a=$_REQUEST['fio'];
     $b=$_REQUEST['BirthDate'];
     $c=$_REQUEST['phone'];
     $d=$_REQUEST['email'];
@@ -134,38 +119,22 @@ if (isset($_POST['submit'])) {
 }*/
 
 ?>
-<?php
-/*
-if(isset($_POST['submit'])){
 
-    require_once('connection_db.php');
-    $a=$_REQUEST['fio'];
-    $b=$_REQUEST['BirthDate'];
-    $c=$_REQUEST['phone'];
-    $d=$_REQUEST['email'];
-    $e=$_REQUEST['doclad'];
-    $f=$_REQUEST['theme'];
-    $g=$_REQUEST['conference'];
-
-   
-    $sql="INSERT INTO $usertable (fio,BirthDate,phone,email,doclad,theme,conference) VALUES ('$a','$b','$c','$d','$e','$f','$g')";
-    $result = mysqli_query($conn, $sql);
-    
-    if ($result == false) {
-        print("<br>Произошла ошибка при выполнении запроса");
-    } else {
-        print("<br>Данные записаны в базу данных. <p><b>Поздравляем, Вы зарегистрированный участник конференции!</b></p>");}
-    
-    $conn->close();}*/
-?>
 </fieldset>
 <p>
-Чтобы записать данные в БД, нажмите на кнопку:
+Чтобы записать данные в БД, нажмите на кнопку:</p>
 <div>
         <form action="record_db.php" method="post">
         <input id="submit" name="submit" type="submit" value="Записать мои регистрационные данные в базу"><br/>
         </form>
         </div> 
-</p>
+
+        </main>
+
+<footer id="footer">
+        <h3>Контакты</h3>
+        <p>123366, Россия, Москва, Проспект Мира, 150</p>
+        <p>Тел.:+7(495) 642-23-78</p>
+    </footer>
 </body>
 </html>
