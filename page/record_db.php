@@ -8,6 +8,19 @@
     
     <style>
 
+html, body {
+height: 100%;
+}
+.main {
+min-height: 100%;
+margin-bottom: -100px;
+}
+.footer {   
+    height: 100px;
+    background: #666;
+    color: rgb(255, 255, 255);  
+          }
+
 fieldset {
     margin: 0 auto;
     width: 400px;
@@ -20,10 +33,7 @@ body
 {
     background-image: url(/img/background.jpg);
 }
-footer {   
-    background: #666;
-    color: rgb(255, 255, 255);  
-  }
+
     </style>
 <b></b>
 </head>
@@ -38,7 +48,7 @@ footer {
                   
         </ul>
     </header>
-<main>
+<main class="main">
     <fieldset>
   
 <!--Запись в БД-->
@@ -60,12 +70,12 @@ $result = mysqli_query($conn, $sql);
 if ($result == false) {
     print("<br>Произошла ошибка при выполнении запроса");
 } else {
-    print("<br>Данные записаны в базу данных. <p><b>Поздравляем, $a, Вы зарегистрированный участник конференции!</b></p>");}
+    print("<br>Данные записаны в базу данных. <p><b>Поздравляем, $a, Вы успешно зарегистрированы!</b></p>");}
 
 $conn->close();}
 ?>
 </fieldset>
-<footer id="cont">
+<footer id="cont" class="footer">
         <h3>Контакты</h3>
         <p>123366, Россия, Москва, Проспект Мира, 150</p>
         <p>Тел.:+7(495) 642-23-78</p>
