@@ -9,7 +9,15 @@
 
 table, th, td {
    border: 1px solid black;
+   background-color: antiquewhite;
+   
 }
+
+body
+{
+    background-image: url(/img/background.jpg);
+}
+
 
     </style>
 
@@ -20,19 +28,19 @@ table, th, td {
      <h1> Зарегистрированные участники конференции </h1>
       <p></p>
       <ul>
-            <li><a href="../index.html">Форма регистрации</a></li>
-            <li><a href="#">Контакты</a></li>
+        <li><a href="../HomePage.html">Главная страница</a></li>
+        <li><a href="../index.html">Форма регистрации</a></li>
         
         </ul>
     </header>
   
     
-    <fieldset>
+    <div>
 
 <!--подключение к БД, запись в БД-->
 <?php
 
-include 'connection_db.php';
+include 'connection_db.php';//подкл срипт для коннекта с бд
 $sql = "SELECT * FROM $usertable";
 if($result = $conn->query($sql)){
     $rowsCount = $result->num_rows; // количество полученных строк
@@ -50,8 +58,6 @@ if($result = $conn->query($sql)){
             echo "<td>" . $row["doclad"] . "</td>";
             echo "<td>" . $row["theme"] . "</td>";
             echo "<td>" . $row["conference"] . "</td>";
-
-
         echo "</tr>";
     }
     echo "</table>";
@@ -59,12 +65,8 @@ if($result = $conn->query($sql)){
 } else {
     echo "Ошибка: " . $conn->error;
 }
-
-
 $conn->close();
 ?>
-
-
-</fieldset>
+</div>
 </body>
 </html>
